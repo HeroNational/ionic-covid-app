@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-row>
+        <ion-icon name="menu" float-left></ion-icon>
+        <ion-searchbar></ion-searchbar>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll="false">
+
+  <ion-col style="position: absolute; margin-bottom:80px" margin-bottom>
+    <ion-card *ngFor=" let elements of count">
+
+      <ion-card-content>
+        <img src="{{elements.image}}" alt="{{elements.texte}}" srcset="">
+        <br>
+        <p>
+
+          &nbsp;&nbsp;
+          {{elements.texte}}
+        </p>
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle>
+              <ion-item>
+                <ion-label>
+                  Published the &nbsp;
+                  <ion-label color="primary">{{elements.date}}</ion-label>
+                </ion-label>
+                <ion-datetime display-format="DD.MM.YYYY"></ion-datetime>
+              </ion-item>
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-col>
+
+
+  <ion-tabs style="position: sticky; top:0px;" margin-top>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button>
+        <ion-icon name="ios-search"></ion-icon>
+        <ion-label>Recherche</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button>
+        <ion-icon name="ios-home" color="primary"></ion-icon>
+        <ion-label>Accueil</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button>
+        <ion-icon name="ios-map"></ion-icon>
+        <ion-label>covid-map</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+
+  </ion-tabs>
+
+</ion-content>
